@@ -1,0 +1,5 @@
+1,Introduction to Python,John Smith,Available
+2,Data Structures and Algorithms,Jane Doe,Available
+3,Database Management System,Juan Dela Cruz,Borrowed
+4,Object Oriented Programming,Maria Santos,Available
+5,Web Development Basics,Pedro Reyes,Available
