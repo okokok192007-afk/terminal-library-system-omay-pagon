@@ -1,0 +1,2 @@
+B001,Juan Dela Cruz,BSIT-1
+B002,Maria Santos,BSIT-2
