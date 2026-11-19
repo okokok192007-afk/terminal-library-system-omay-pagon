@@ -1,3 +1,26 @@
+PINK = "\033[95m"
+BLUE = "\033[94m"
+RESET = "\033[0m"
+current_theme = RESET
+
+def change_theme():
+    global current_theme
+    print("\n--- CHANGE THEME ---")
+    print("1. Pink Theme - Cute")
+    print("2. Blue Theme - Ocean")
+    print("3. Back to Default")
+    choice = input("Select theme (1-3): ")
+    if choice == "1":
+        current_theme = PINK
+        print(current_theme + "Theme changed to Pink!" + RESET)
+    elif choice == "2":
+        current_theme = BLUE
+        print(current_theme + "Theme changed to Blue!" + RESET)
+    elif choice == "3":
+        current_theme = RESET
+        print("Theme changed to Default!")
+    else:
+        print("Invalid theme choice!")
 import os
 import hashlib
 import datetime
@@ -162,6 +185,7 @@ def view_history():
 
 def main_dashboard(username, role):
     while True:
+        print(current_theme, end="")
         print(f"\n=== LIBRARY DASHBOARD [{role}: {username}] ===")
         print("1. View Books")
         print("2. Add New Book")
@@ -172,8 +196,11 @@ def main_dashboard(username, role):
         if role == "Admin":
             print("7. Register New User")
             print("8. Logout")
+            print("9. Change Theme - Pink & Blue")
         else:
             print("7. Logout")
+            print("9. Change Theme Pink & blue")
+            print(RESET, end="")
         choice = input("Select an option: ").strip()
         if choice == '1':
             view_books()
@@ -196,6 +223,8 @@ def main_dashboard(username, role):
         elif choice == '8' and role == "Admin":
             print("Logging out...")
             break
+        elif choice == '9':
+            change_theme()
         else:
             print("Invalid choice. Please try again.")
 
